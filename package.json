@@ -11,5 +11,6 @@
   "dependencies": {
     "astro": "^5.2.6",
     "flu": "link:"
-  }
+  },
+  "packageManager": "pnpm@10.1.0"
 }
