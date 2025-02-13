@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Pompiere&display=swap");
+
+:root {
+  --font-family: "Pompiere", serif;
+  --background-color: #bfecff;
+  --envelope-color: #cdc1ff;
+  --heart-color: #f72c5b;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --front-light-color: #ffccea;
+  --front-dark-color: #fffbf2;
+  --text-color: white;
+  --alt-text-color: #232121;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  overflow: hidden;
+  padding: 0.4rem;
+  margin: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  outline: none;
+}
+
+.valentines-day {
+  position: relative;
+  cursor: pointer;
+}
+
+.envelope {
+  position: relative;
+  filter: drop-shadow(0 0 25px var(--shadow-color));
+}
+
+.envelope:before {
+  content: "";
+  position: absolute;
+  width: 254px;
+  height: 254px;
+  background-color: var(--envelope-color);
+  transform: rotate(-45deg);
+  border-radius: 0 15px 0 0;
+  left: -37px;
+  top: -82px;
+}
+
+.envelope:after {
+  content: "";
+  position: absolute;
+  background-color: var(--envelope-color);
+  width: 360px;
+  height: 225px;
+  left: -90px;
+  top: 45px;
+}
+
+.heart {
+  position: relative;
+  background-color: var(--heart-color);
+  display: inline-block;
+  height: 180px;
+  top: 50px;
+  left: 0;
+  transform: rotate(-45deg);
+  width: 180px;
+  filter: drop-shadow(0 -10px 25px var(--shadow-color));
+  transition: 0.5s;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  background-color: var(--heart-color);
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  position: absolute;
+}
+
+.heart:before {
+  top: -100px;
+  left: 0;
+}
+
+.heart:after {
+  left: 100px;
+  top: 0;
+}
+
+.front {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-right: 190px solid var(--front-light-color);
+  border-top: 113px solid transparent;
+  border-bottom: 113px solid transparent;
+  top: 44px;
+  left: 80px;
+  z-index: 4;
+}
+
+.front:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 190px solid var(--front-light-color);
+  border-top: 113px solid transparent;
+  border-bottom: 113px solid transparent;
+  top: -113px;
+  left: -170px;
+}
+
+.front:after {
+  width: 0;
+  height: 0;
+  position: absolute;
+  content: "";
+  border-bottom: 150px solid var(--front-dark-color);
+  border-right: 180px solid transparent;
+  border-left: 180px solid transparent;
+  top: -36px;
+  left: -170px;
+}
+
+.text {
+  position: absolute;
+  font-family: Arial, sans-serif;
+  letter-spacing: 3.5px;
+  text-align: center;
+  color: var(--text-color);
+  z-index: 2;
+  top: 50px;
+  left: 15px;
+  transition: 0.5s;
+}
+
+.text h1 {
+  font-size: 1.7em;
+  margin-top: 0.4rem;
+}
+
+.valentines-day:hover .heart {
+  transform: translateY(-50px) rotate(-45deg);
+}
+
+.valentines-day:hover .text {
+  transform: translateY(-50px);
+}
+
+.heart-sm {
+  position: relative;
+  background-color: var(--heart-color);
+  display: inline-block;
+  height: 90px;
+  top: 5px;
+  left: 5px;
+  transform: rotate(-45deg);
+  width: 90px;
+  filter: drop-shadow(0 -10px 25px var(--shadow-color));
+  transition: 0.5s;
+}
+
+.heart-sm:before,
+.heart-sm:after {
+  content: "";
+  background-color: var(--heart-color);
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  position: absolute;
+}
+
+.heart-sm:before {
+  top: -50px;
+  left: 0;
+}
+
+.heart-sm:after {
+  left: 50px;
+  top: 0;
+}
+
+.letter-paper {
+  background-color: var(--front-dark-color);
+  color: var(--alt-text-color);
+  border-radius: 0.6rem;
+  filter: drop-shadow(0 0 25px var(--shadow-color));
+  font-size: 1.3rem;
+  padding: 1.2rem 1.2rem;
+  width: 540px;
+  max-width: 100%;
+}
+.paper-header {
+  display: flex;
+}
+.paper-header > div {
+  margin-left: 60px;
+  margin-bottom: 2rem;
+}
+
+.text-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0.2rem;
+}
+.text-subtitle {
+  font-size: 1.5rem;
+  margin: 0.2rem;
+}
+
+.letter {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 500px) {
+  .text {
+    font-size: 1em;
+  }
+  .text-title {
+    font-size: 1.8rem;
+  }
+  .text-subtitle {
+    font-size: 1.2rem;
+  }
+}

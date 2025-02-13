@@ -11,6 +11,9 @@ importers:
       astro:
         specifier: ^5.2.6
         version: 5.2.6(rollup@4.34.6)(typescript@5.7.3)
+      flu:
+        specifier: 'link:'
+        version: 'link:'
 
 packages:
 
